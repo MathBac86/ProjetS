@@ -1,7 +1,9 @@
 [
     "\/assets\/bootstrap.js",
     "\/assets\/styles\/app.css",
+    "\/assets\/styles\/nav.css",
     "bootstrap\/dist\/css\/bootstrap.min.css",
+    "\/assets\/js\/menu\/menu.js",
     "@symfony\/stimulus-bundle",
     "@hotwired\/stimulus",
     "\/assets\/@symfony\/stimulus-bundle\/controllers.js",

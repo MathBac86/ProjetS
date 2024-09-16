@@ -1,0 +1,264 @@
+header{
+    background: #22242A;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 100;
+}
+
+header label {
+    margin-bottom: -0.1em;
+}
+
+header svg {
+    height: 20px;
+    width: 20px;
+    color: #fff;
+}
+
+.left_area h3{
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+
+.left_area span{
+    color: #19B3D3;
+}
+
+.left_area-img {
+    width: 200px;
+    margin-top: -8px;
+}
+
+.right_area {
+    margin-top: -19px;
+}
+
+.logout_btn{
+    padding: 5px;
+    background: #19B3D3;
+    text-decoration: none;
+    float: right;
+    margin-top: -20px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.2s;
+    transition-property: background;
+}
+@media (max-width: 780px) {
+    .logout_btn {
+        display: none;
+    }
+}
+
+.logout_btn:hover{
+    background: #0B87A6;
+    color: #2f323a;
+    text-decoration: none;
+}
+
+.sidebar {
+    margin-top: 31px;
+    background: #2f323a8c;
+    backdrop-filter: blur(60px);
+    padding-top: 20px;
+    position: fixed;
+    width: 235px;
+    height: -webkit-fill-available;
+    min-height: 100vh;
+    left:  -100%;
+    transition: 0.6s ease;
+    transition-property: left;
+    overflow-y: overlay;
+    padding-bottom: 100px
+}
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+    background-color: lightgrey;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(71, 71, 71, 0.78);
+    border-radius: 6px;
+    height: 5px;
+}
+
+.sidebar .profile_image {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    background-color: lightslategrey;
+}
+
+.sidebar h4 {
+    color: #ccc;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.sidebar-prof {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar .menu {
+    width: 100%;
+}
+
+.sidebar .menu .item{
+    position: relative;
+    cursor: pointer;
+}
+
+.sidebar .menu .item a{
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 25px 5px 20px;
+    line-height: 45px;
+}
+
+.sidebar .menu .item a:hover {
+    background: #19B3D3;;
+    transition: 0.3s ease;
+}
+
+.sidebar .menu .item a .dropdown {
+    position: absolute;
+    right: 0;
+    margin: 16px 15px 20px 20px;
+    transition: 0.3s ease;
+}
+
+.sidebar .menu .item .sub-menu {
+    background: #22242A8C;
+    display: none;
+    height: 23vh;
+    overflow-y: auto;
+    margin-left: 7px;
+    margin-right: 6px;
+}
+.sidebar .menu .item .sub-menu::-webkit-scrollbar {
+    width: 5px;
+    background-color: #22242a00;
+}
+.sidebar .menu .item .sub-menu::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 6px;
+    height: 5px;
+}
+
+.sidebar .menu .item .sub-menu a {
+    padding-left: 20px;
+}
+
+.rotate{
+    transform: rotate(90deg);
+}
+
+.close-btn{
+    position: absolute;
+    color: #ffffff;
+    top: 0;
+    right: 5%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu-btn {
+    z-index: 1;
+    color: #fff;
+    /* position: absolute; */
+    cursor: pointer;
+    left: 240px;
+    font-size: 25px;
+    margin: 10px 5px 0px 5px;
+    transition: 0.2s;
+    transition-property: color;
+}
+
+.menu-btn:hover{
+    color: #19B3D3;
+}
+
+main{
+    padding: 80px 10px 0 10px;
+    background-size: cover;
+}
+@media screen and (max-width: 780px) {
+    main {
+        padding-top: 165px;
+    }
+}
+
+#check{
+    display: none;
+}
+
+.mobile_nav {
+    display: none;
+}
+
+.deploye {
+    display: block !important;
+    transition: all .5s;
+}
+
+@media screen and (max-width: 780px) {
+    .content {
+        margin-left: 0;
+        margin-top: 0;
+        padding: 10px 20px;
+        transition: 0s;
+    }
+
+    .nav_bar {
+        background: #22242A;
+        width: calc(100% - 0%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav_bar .profile_image {
+        width: 50px;
+        height: 50px;
+        color: white;
+        padding-left: 20%;
+        padding-top: 20%;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        font-size: large;
+        font-weight: 600;
+        background-color: lightslategrey;
+    }
+
+    .nav_bar h4 {
+        color: #fff;
+    }
+
+    .nav_bar .nav_btn {
+        color: #fff;
+        font-size: 22px;
+        cursor: pointer;
+        transition: 0.6s ease;
+        transition-property: all;
+    }
+
+    .nav_bar .nav_btn:hover{
+        color: #19B3D3;
+    }
+}
