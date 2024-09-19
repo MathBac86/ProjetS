@@ -1,7 +1,5 @@
-<input type="checkbox" id="check">
-
 <header>
-    <label for="check" class="menu-btn">
+    {# <label for="check" class="menu-btn">
         {{ ux_icon('fa6-regular:chart-bar') }}
     </label>
     <div class="right_area">
@@ -40,5 +38,59 @@
                 <a href="" title="A propos">{{ ux_icon('fa6-solid:circle-info') }}<span>A propos</span></a>
             </div>
         </div>
-    </div>
+    </div> #}
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-xl">
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset('images/Logo.png')}}" alt="The Gallery">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">The Gallery</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Son histoire</a></li>
+                            <li><a class="dropdown-item" href="#">Son engagement</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Les expositions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Actuellement</a></li>
+                            <li><a class="dropdown-item" href="#">A venir</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Passées</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Boutique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Another Link</a>
+                    </li>
+                </ul>
+                <div class="search-and-icons">
+                    <form class="d-flex mb-2 me-2" role="search">
+                        <input class="form-control me-2" type="search" aria-label="Search">
+                    </form>
+                    <div class="user-icons d-flex mb-2">
+                        <div class="profile">{{ ux_icon('fa6-solid:user') }}</div>
+                        <div class="cart">{{ ux_icon('fa6-solid:cart-shopping') }}</div>
+                    </div>
+                </div>
+                <div class="contact-info d-md-flex">
+                    <p>+0987654321 | +1234567890 </p>
+                    <p><a href="mailto:">contact@domainname.com</a></p>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>

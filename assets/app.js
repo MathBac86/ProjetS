@@ -11,6 +11,7 @@ import './styles/app.css';
 import './styles/nav.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import 'bootstrap'
 import './js/menu/menu.js'
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
