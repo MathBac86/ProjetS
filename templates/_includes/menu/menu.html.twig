@@ -41,7 +41,7 @@
     </div> #}
     <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-xl">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ path('home') }}">
                 <img src="{{ asset('images/Logo.png')}}" alt="The Gallery">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        <a class="nav-link active" aria-current="page" href="{{ path('home') }}">Accueil</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">The Gallery</a>
@@ -82,13 +82,33 @@
                         <input class="form-control me-2" type="search" aria-label="Search">
                     </form>
                     <div class="user-icons d-flex mb-2">
-                        <div class="profile">{{ ux_icon('fa6-solid:user') }}</div>
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ ux_icon('fa6-solid:user') }}
+                            </a>
+                            <ul class="dropdown-menu">
+                            {% if app.user %}
+                                <li><div class="dropdown-item">{{ app.user.firstname }} {{ app.user.lastname|upper }}</div></li>
+                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:address-card',  {"class": "me-2"}) }} Profile</a></li>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="{{ path('admin-dashboard')}}">{{ ux_icon('fa6-solid:folder-plus', {"class": "me-2"}) }} Admin</a></li>
+                                {% endif %}
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{ path('app_logout')}}">{{ ux_icon('fa6-solid:right-from-bracket', {"class": "me-2"}) }}Déconnexion</a></li>
+                            {% else %}
+                                <li><a class="dropdown-item" href="{{ path('app_login')}}">{{ ux_icon('fa6-solid:right-to-bracket', {"class": "me-2"}) }} Se Connecter</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{{ path('app_register')}}">{{ ux_icon('fa6-solid:user-plus', {"class": "me-2"}) }} S'inscrire</a></li>
+                            {% endif %}
+                            </ul>
+                        </div>
                         <div class="cart">{{ ux_icon('fa6-solid:cart-shopping') }}</div>
                     </div>
                 </div>
                 <div class="contact-info d-md-flex">
-                    <p>+0987654321 | +1234567890 </p>
-                    <p><a href="mailto:">contact@domainname.com</a></p>
+                    <p>{{ ux_icon('fa6-solid:phone', {"class": "me-2"}) }} +1234567890 </p>
+                    <p><a href="mailto:">{{ ux_icon('fa6-solid:envelope', {"class": "me-2"}) }} contact@domainname.com</a></p>
                 </div>
             </div>
         </div>

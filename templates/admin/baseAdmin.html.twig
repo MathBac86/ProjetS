@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %} - The Gallery</title>
+        <title>Admin - {% block title %}{% endblock %} - The Gallery</title>
         <link rel="icon" href="{{ asset('images/favicon.ico') }}">
         {% block stylesheets %}
         {% endblock %}
@@ -12,7 +12,7 @@
         {% endblock %}
     </head>
     <body>
-        {% include '_includes/menu/menu.html.twig' %}
+        {# {% include '_includes/menu/menu.html.twig' %} #}
 
         <main>
             {% block main %}{% endblock %}
