@@ -3,27 +3,65 @@
 {% block title %}Inscription{% endblock %}
 
 {% block main %}
-    <div class="container">
-        {% for flash_error in app.flashes('verify_email_error') %}
-            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-        {% endfor %}
+    <div class="registry">
+        <div id="registry">
+            {% if app.user %}
+                <div class="mb-3 text-center">
+                    <span style="color: whitesmoke;">{{ app.user.username }}, vous êtes déjà connecté </span><br>
+                    <a class="btn btn-danger" href="{{ path('app_logout') }}">Logout</a>
+                    <a class="btn btn-success" href="{{ path('home') }}">Accueil</a>
+                </div>
+            {% else %}
+                <h1>Inscription</h1>
 
-        <h1>Inscription</h1>
+                {% for flash_error in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                {% endfor %}
 
-        {{ form_errors(registrationForm) }}
+                {{ form_errors(registrationForm) }}
 
-        {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.lastname) }}
-            {{ form_row(registrationForm.firstname) }}
-            {{ form_row(registrationForm.plainPassword) }}
+                {{ form_start(registrationForm) }}
+                    <div class="form__group field mb-3">
+                        {{ form_errors(registrationForm.email) }}
+                        {{ form_widget(registrationForm.email) }}
+                        {{ form_label(registrationForm.email) }}
+                        {{ form_help(registrationForm.email) }}
+                    </div>
 
-            {{ form_row(registrationForm.agreeTerms) }}
+                    <div class="form__group field mb-3">
+                        {{ form_errors(registrationForm.lastname) }}
+                        {{ form_widget(registrationForm.lastname) }}
+                        {{ form_label(registrationForm.lastname) }}
+                        {{ form_help(registrationForm.lastname) }}
+                    </div>
 
-            <div class="text-center">
-                <a href="{{ path('app_login') }}">Déjà inscrit ? Me connecter</a>
-                {{ form_row(registrationForm.submit) }}
-            </div>
-        {{ form_end(registrationForm) }}
+                    <div class="form__group field mb-3">
+                        {{ form_errors(registrationForm.firstname) }}
+                        {{ form_widget(registrationForm.firstname) }}
+                        {{ form_label(registrationForm.firstname) }}
+                        {{ form_help(registrationForm.firstname) }}
+                    </div>
+
+                    <div class="form__group field mb-3">
+                        {{ form_errors(registrationForm.plainPassword) }}
+                        {{ form_widget(registrationForm.plainPassword) }}
+                        {{ form_label(registrationForm.plainPassword) }}
+                        {{ form_help(registrationForm.plainPassword) }}
+                    </div>
+
+                    <div class="form__group text-center field mb-3"> 
+                        {{ form_errors(registrationForm.agreeTerms) }}
+                        {{ form_widget(registrationForm.agreeTerms) }}
+                        {{ form_label(registrationForm.agreeTerms) }}
+                        {{ form_help(registrationForm.agreeTerms) }}
+                    </div>
+
+                    <div class="text-center">
+                        <a class="text-decoration-none" href="{{ path('app_login') }}">Déjà inscrit ? Me connecter</a>
+                        {{ form_row(registrationForm.submit) }}
+                    </div>
+                {{ form_end(registrationForm) }}
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

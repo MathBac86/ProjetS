@@ -9,6 +9,8 @@ import './bootstrap.js';
 
 import './styles/app.css';
 import './styles/nav.css';
+import './styles/login.css';
+import './styles/input.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import 'bootstrap'

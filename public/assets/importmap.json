@@ -1,6 +1,6 @@
 {
     "app": {
-        "path": "\/assets\/app-05763a76fd9d23767cbf4fe1c9d416c5.js",
+        "path": "\/assets\/app-37beb8ed142f9ce6f4c151eba76d40cd.js",
         "type": "js"
     },
     "\/assets\/bootstrap.js": {
@@ -20,11 +20,19 @@
         "type": "js"
     },
     "\/assets\/styles\/app.css": {
-        "path": "\/assets\/styles\/app-1d49bfdd085712786bbd14e275bfe6ba.css",
+        "path": "\/assets\/styles\/app-8b9eab569a19dfc705e1759529d87e6e.css",
         "type": "css"
     },
     "\/assets\/styles\/nav.css": {
-        "path": "\/assets\/styles\/nav-7ce5fcec5e8499ed154d7f28564ed2e9.css",
+        "path": "\/assets\/styles\/nav-207cadaf20f02cd391a40855e72d687d.css",
+        "type": "css"
+    },
+    "\/assets\/styles\/login.css": {
+        "path": "\/assets\/styles\/login-019e59e8a3c1889433bc83081892ba62.css",
+        "type": "css"
+    },
+    "\/assets\/styles\/input.css": {
+        "path": "\/assets\/styles\/input-007d8d8913ed8f5f571ef4b110be6780.css",
         "type": "css"
     },
     "\/assets\/js\/menu\/menu.js": {

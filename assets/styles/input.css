@@ -1,0 +1,36 @@
+
+/* Inputs */
+
+input, textarea, select {
+    position: relative;
+    display: inline-block;
+    margin: 9px;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 6px;
+    background: rgba(3,3,3,.1);
+    border: 1px solid white;
+  }
+  
+  input[type=checkbox] {
+    width: 14px;
+    height: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #f5f5f700;
+    border-radius: 50%;
+    -webkit-border-radius:50%;
+    border: 1.3px solid #111;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: -2px;
+    transition: all 0.3s 0s ease;
+  }
+  
+  input[type=checkbox]:checked {
+    background-color: #f5f5f700;
+    text-align: center;
+    border: 1.3px solid #4cd964;
+    box-shadow: inset 0px 0px 0px 3px #01BD6F;
+  }

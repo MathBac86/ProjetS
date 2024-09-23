@@ -2,6 +2,8 @@
     "\/assets\/bootstrap.js",
     "\/assets\/styles\/app.css",
     "\/assets\/styles\/nav.css",
+    "\/assets\/styles\/login.css",
+    "\/assets\/styles\/input.css",
     "bootstrap\/dist\/css\/bootstrap.min.css",
     "bootstrap",
     "\/assets\/js\/menu\/menu.js",
