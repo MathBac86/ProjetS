@@ -23,12 +23,12 @@
                
                 <div class="form__group field mb-3">
                     <input type="email" class="form__field" placeholder="Votre mail" value="{{ last_username }}" name="_username" id="username" autocomplete="email" required autofocus/>
-                    <label for="username" class="form__label ms-1">Email</label>
+                    <label for="username" class="form__label">Email</label>
                 </div>
 
                 <div class="form__group field mb-3">
                     <input type="password" class="form__field" placeholder="Votre mot de passe" name="_password" id="password" autocomplete="current-password" required/>
-                    <label for="password" class="form__label ms-1">Mot de passe</label>
+                    <label for="password" class="form__label">Mot de passe</label>
                 </div>
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

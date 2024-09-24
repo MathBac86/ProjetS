@@ -12,9 +12,9 @@
         {% endblock %}
     </head>
     <body>
-        {# {% include '_includes/menu/menu.html.twig' %} #}
+        {% include 'admin/_includes/menu/menuAdmin.html.twig' %}
 
-        <main>
+        <main class="admin-main ms-3">
             {% block main %}{% endblock %}
         </main>
     </body>

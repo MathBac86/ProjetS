@@ -1,0 +1,7 @@
+.admin-main {
+    position: relative;
+    left: 260px;
+    width: calc(99% - 260px);
+    transition: all 0.5s ease;
+    margin-left: 5%;
+}

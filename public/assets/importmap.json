@@ -1,6 +1,6 @@
 {
     "app": {
-        "path": "\/assets\/app-37beb8ed142f9ce6f4c151eba76d40cd.js",
+        "path": "\/assets\/app-9fd39c0779b1e8067883d8673c420251.js",
         "type": "js"
     },
     "\/assets\/bootstrap.js": {
@@ -32,11 +32,23 @@
         "type": "css"
     },
     "\/assets\/styles\/input.css": {
-        "path": "\/assets\/styles\/input-007d8d8913ed8f5f571ef4b110be6780.css",
+        "path": "\/assets\/styles\/input-cfee64566c9a0426fc18e18cf9b648c7.css",
+        "type": "css"
+    },
+    "\/assets\/styles\/admin\/admin.css": {
+        "path": "\/assets\/styles\/admin\/admin-4556cc7613dd3731eb5226f35f772666.css",
+        "type": "css"
+    },
+    "\/assets\/styles\/admin\/sidebar.css": {
+        "path": "\/assets\/styles\/admin\/sidebar-4a23add2b9d07aeee3a7c75206054be9.css",
         "type": "css"
     },
     "\/assets\/js\/menu\/menu.js": {
         "path": "\/assets\/js\/menu\/menu-3cf71ab6b640986ab6574c396e4b2a5d.js",
+        "type": "js"
+    },
+    "\/assets\/js\/admin\/sidebar.js": {
+        "path": "\/assets\/js\/admin\/sidebar-cbcbace5ed617f6df4f1e800b9f45243.js",
         "type": "js"
     },
     "@hotwired\/stimulus": {

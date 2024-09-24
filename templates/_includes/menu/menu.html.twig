@@ -1,48 +1,8 @@
 <header>
-    {# <label for="check" class="menu-btn">
-        {{ ux_icon('fa6-regular:chart-bar') }}
-    </label>
-    <div class="right_area">
-        <a href="{{ path("app_logout") }}" class="logout_btn">{{ ux_icon('fa6-solid:arrow-right-from-bracket') }} Déconnexion</a>
-    </div>
-
-    <div class="sidebar">
-        <div class="close-btn mb-4">
-            {{ ux_icon('fa6-solid:xmark') }}
-        </div>
-        <div class="sidebar-prof">
-            {% if (is_granted("ROLE_ADMIN") or is_granted("ROLE_USER")) %}
-                <div class="sidebar-user">
-                    <h4>{{ app.user.lastname|upper }}<br>{{ app.user.firstname }}</h4>
-                </div>
-            {% endif %}
-        </div>
-        <div class="menu">
-            <div class="item">
-                <a href="{{ path("home") }}" title="Accueil">{{ ux_icon('fa6-solid:house') }}<span>Accueil</span></a>
-            </div>
-
-            {% if (is_granted("ROLE_ADMIN")) %}
-                <div class="item">
-                    <a href="{{ path('admin-list')}}">{{ ux_icon('fa6-solid:toolbox') }}<span>Administration</span></a>
-                </div>
-            {% endif %}
-            <div class="item">
-                <a class="sub-btn">{{ ux_icon('fa6-solid:magnifying-glass') }}<span>Items</span>{{ ux_icon('fa6-solid:angle-right', {class: 'dropdown'}) }}</a>
-                <div class="sub-menu">
-                    <a href="" class="sub-item" title="Item 1">{{ ux_icon('fa6-solid:folder-open') }}<span> Items 1 </span></a>
-                    <a href="" class="sub-item" title="Item 2">{{ ux_icon('fa6-solid:folder-open') }}<span> Items 2 </span></a>
-                </div>
-            </div>
-            <div class="item">
-                <a href="" title="A propos">{{ ux_icon('fa6-solid:circle-info') }}<span>A propos</span></a>
-            </div>
-        </div>
-    </div> #}
     <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-xl">
             <a class="navbar-brand" href="{{ path('home') }}">
-                <img src="{{ asset('images/Logo.png')}}" alt="The Gallery">
+                
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

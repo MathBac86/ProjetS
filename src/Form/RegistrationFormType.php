@@ -23,7 +23,7 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Votre email',
                 'label_attr' => [
-                    'class' => 'form__label ms-1'
+                    'class' => 'form__label'
                 ],
                 'attr' => [
                     'placeholder' => ' Votre email', 
@@ -45,7 +45,7 @@ class RegistrationFormType extends AbstractType
             ->add('lastname', TextType::class, [
                 'label' => 'Votre nom',
                 'label_attr' => [
-                    'class' => 'form__label ms-1'
+                    'class' => 'form__label'
                 ],
                 'required' => true,
                 'attr' => [
@@ -56,7 +56,7 @@ class RegistrationFormType extends AbstractType
             ->add('firstname', TextType::class, [
                 'label' => 'Votre prénom',
                 'label_attr' => [
-                    'class' => 'form__label ms-1'
+                    'class' => 'form__label'
                 ],
                 'required' => true,
                 'attr' => [
@@ -69,7 +69,7 @@ class RegistrationFormType extends AbstractType
                 // this is read and encoded in the controller
                 'label' => 'Votre mot de passe : ',
                 'label_attr' => [
-                    'class' => 'form__label ms-1'
+                    'class' => 'form__label'
                 ],
                 'mapped' => false,
                 'attr' => [

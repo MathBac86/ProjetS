@@ -1,0 +1,97 @@
+<div class="sidebar close">
+    <div class="logo-details">
+        <img src="{{ asset('images/Logo.png')}}" alt="The Gallery">
+        <span class="logo_name ms-3">TG - Admin</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <div class="hr">
+                <hr>            
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                {{ ux_icon('fa6-solid:table-cells-large') }}
+                <span class="link_name ms-3">Dashboard</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Dashboard</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                {{ ux_icon('fa6-solid:paintbrush') }}
+                <span class="link_name ms-3">Expositions</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Expositions</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                {{ ux_icon('fa6-solid:users') }}
+                <span class="link_name ms-3">Utilisateurs</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Utilisateurs</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="hr">
+                <hr>            
+            </div>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    {{ ux_icon('fa6-solid:shop') }}
+                    <span class="link_name ms-3">Boutique</span>
+                </a>
+                {{ ux_icon('fa6-solid:chevron-down', {'class': 'arrow'}) }}
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Boutique</a></li>
+                <li><a href="#">Produits</a></li>
+                <li><a href="#">Import</a></li>
+            </ul>
+        </li> 
+        <li>
+            <div class="hr">
+                <hr>            
+            </div>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    {{ ux_icon('fa6-solid:gears') }}
+                    <span class="link_name ms-3">Paramètres</span>
+                </a>
+                {{ ux_icon('fa6-solid:chevron-down', {'class': 'arrow'}) }}
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Paramètres</a></li>
+                <li><a href="#">Utilisateurs internes</a></li>
+                <li><a href="#">Page d'accueil</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="" alt="profileImg">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">{{ app.user.firstname }} {{ app.user.lastname|upper }}</div>
+                    <div class="job">Role</div>
+                </div>
+                <a href="{{ path('app_logout') }}" >{{ ux_icon('fa6-solid:right-from-bracket') }}</a>
+            </div>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <div class="home-content">
+        {{ ux_icon('fa6-solid:bars', {'class': 'bx-menu'}) }}
+        {# <i class='bx bx-menu' ></i> #}
+        <span class="text">The Gallery - Administration</span>
+    </div>  
+</section>
