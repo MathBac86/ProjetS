@@ -35,4 +35,10 @@ return [
         'version' => '5.3.3',
         'type' => 'css',
     ],
+    'datatables.net' => [
+        'version' => '2.1.7',
+    ],
+    'jquery' => [
+        'version' => '3.7.1',
+    ],
 ];

@@ -3,7 +3,7 @@
     "@symfony\/stimulus-bundle\/loader.js": "\/assets\/@symfony\/stimulus-bundle\/loader-870999a02e9fc147c034d522826ea70d.js",
     "@symfony\/ux-turbo\/turbo_controller.js": "\/assets\/@symfony\/ux-turbo\/turbo_controller-ce5e32dafdec0b7752f02e3e2cb25751.js",
     "@symfony\/ux-turbo\/turbo_stream_controller.js": "\/assets\/@symfony\/ux-turbo\/turbo_stream_controller-a9d0d06c48318d35cc0e0aa27ef6b2dc.js",
-    "app.js": "\/assets\/app-9fd39c0779b1e8067883d8673c420251.js",
+    "app.js": "\/assets\/app-d06ba068612bdc74db1973965222c319.js",
     "bootstrap.js": "\/assets\/bootstrap-c423b8bbc1f9cae218c105ca8ca9f767.js",
     "controllers\/hello_controller.js": "\/assets\/controllers\/hello_controller-55882fcad241d2bea50276ea485583bc.js",
     "icons\/symfony.svg": "\/assets\/icons\/symfony-b72f39ecf7a4b6f0dea6648ba5cfd78a.svg",
@@ -13,7 +13,7 @@
     "js\/admin\/sidebar.js": "\/assets\/js\/admin\/sidebar-cbcbace5ed617f6df4f1e800b9f45243.js",
     "js\/menu\/menu.js": "\/assets\/js\/menu\/menu-3cf71ab6b640986ab6574c396e4b2a5d.js",
     "styles\/admin\/admin.css": "\/assets\/styles\/admin\/admin-d12eea8be8be0be21bea86095f3b38f5.css",
-    "styles\/admin\/sidebar.css": "\/assets\/styles\/admin\/sidebar-fa6a33f4057d8379596c01c27feb38ed.css",
+    "styles\/admin\/sidebar.css": "\/assets\/styles\/admin\/sidebar-bf2324c947e7b1bb9b8040217944279a.css",
     "styles\/app.css": "\/assets\/styles\/app-8b9eab569a19dfc705e1759529d87e6e.css",
     "styles\/input.css": "\/assets\/styles\/input-cfee64566c9a0426fc18e18cf9b648c7.css",
     "styles\/login.css": "\/assets\/styles\/login-019e59e8a3c1889433bc83081892ba62.css",
@@ -22,5 +22,7 @@
     "vendor\/@hotwired\/turbo\/turbo.index.js": "\/assets\/vendor\/@hotwired\/turbo\/turbo.index-810f44ef1a202a441e4866b7a4c72d11.js",
     "vendor\/@popperjs\/core\/core.index.js": "\/assets\/vendor\/@popperjs\/core\/core.index-ceb5b6c0f9e1d3f6c78ef733facfdcda.js",
     "vendor\/bootstrap\/bootstrap.index.js": "\/assets\/vendor\/bootstrap\/bootstrap.index-c0423c99f6075e6b1cef7579b5c00d32.js",
-    "vendor\/bootstrap\/dist\/css\/bootstrap.min.css": "\/assets\/vendor\/bootstrap\/dist\/css\/bootstrap.min-1712f0378f8675ca7cd423d6262fcccf.css"
+    "vendor\/bootstrap\/dist\/css\/bootstrap.min.css": "\/assets\/vendor\/bootstrap\/dist\/css\/bootstrap.min-1712f0378f8675ca7cd423d6262fcccf.css",
+    "vendor\/datatables.net\/datatables.net.index.js": "\/assets\/vendor\/datatables.net\/datatables.net.index-bc5a7487378fab1fbe6e9e711433d065.js",
+    "vendor\/jquery\/jquery.index.js": "\/assets\/vendor\/jquery\/jquery.index-fb3b33d7311be80ac8aa5c367205beba.js"
 }

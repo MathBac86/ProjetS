@@ -17,6 +17,8 @@ import './styles/admin/admin.css';
 import './styles/admin/sidebar.css';
 
 import 'bootstrap';
+import 'datatables.net';
+import 'jquery'
 import './js/menu/menu.js';
 
 import './js/admin/sidebar.js';

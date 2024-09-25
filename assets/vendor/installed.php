@@ -50,4 +50,25 @@
     array (
     ),
   ),
+  'datatables.net' => 
+  array (
+    'version' => '2.1.7',
+    'dependencies' => 
+    array (
+      0 => 'jquery',
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
+  'jquery' => 
+  array (
+    'version' => '3.7.1',
+    'dependencies' => 
+    array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
 );
