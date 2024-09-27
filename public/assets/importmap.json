@@ -1,6 +1,6 @@
 {
     "app": {
-        "path": "\/assets\/app-d06ba068612bdc74db1973965222c319.js",
+        "path": "\/assets\/app-71b3e590d352d68f662ebbcb347b2619.js",
         "type": "js"
     },
     "\/assets\/bootstrap.js": {
@@ -43,12 +43,20 @@
         "path": "\/assets\/styles\/admin\/sidebar-bf2324c947e7b1bb9b8040217944279a.css",
         "type": "css"
     },
+    "\/assets\/styles\/admin\/table.css": {
+        "path": "\/assets\/styles\/admin\/table-244e3e9f7a572977a060566c77b350b4.css",
+        "type": "css"
+    },
     "\/assets\/js\/menu\/menu.js": {
         "path": "\/assets\/js\/menu\/menu-3cf71ab6b640986ab6574c396e4b2a5d.js",
         "type": "js"
     },
     "\/assets\/js\/admin\/sidebar.js": {
         "path": "\/assets\/js\/admin\/sidebar-cbcbace5ed617f6df4f1e800b9f45243.js",
+        "type": "js"
+    },
+    "\/assets\/js\/admin\/table.js": {
+        "path": "\/assets\/js\/admin\/table-bdaf6c9eeb1bcc7ed93caa39b4f688fe.js",
         "type": "js"
     },
     "@hotwired\/stimulus": {
