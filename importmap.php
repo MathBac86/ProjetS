@@ -35,10 +35,46 @@ return [
         'version' => '5.3.3',
         'type' => 'css',
     ],
+    'jquery' => [
+        'version' => '3.7.1',
+    ],
+    'datatables.net-bs5' => [
+        'version' => '2.1.5',
+    ],
+    'datatables.net-bs5/css/dataTables.bootstrap5.min.css' => [
+        'version' => '2.1.5',
+        'type' => 'css',
+    ],
+    'datatables.net-responsive-bs5' => [
+        'version' => '3.0.3',
+    ],
+    'datatables.net-responsive' => [
+        'version' => '3.0.3',
+    ],
+    'datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css' => [
+        'version' => '3.0.3',
+        'type' => 'css',
+    ],
+    'datatables.net-buttons-bs5' => [
+        'version' => '3.1.2',
+    ],
+    'datatables.net-buttons' => [
+        'version' => '3.1.2',
+    ],
+    'datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css' => [
+        'version' => '3.1.2',
+        'type' => 'css',
+    ],
     'datatables.net' => [
         'version' => '2.1.7',
     ],
-    'jquery' => [
-        'version' => '3.7.1',
+    'jszip' => [
+        'version' => '3.10.1',
+    ],
+    'pdfmake' => [
+        'version' => '0.2.13',
+    ],
+    '@fortawesome/free-solid-svg-icons' => [
+        'version' => '6.6.0',
     ],
 ];

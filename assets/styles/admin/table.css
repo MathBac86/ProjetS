@@ -1,3 +1,7 @@
+.container {
+    max-width: 100% !important;
+}
+
 .table {
     border-spacing: 0 0.85rem !important;
 }
@@ -157,13 +161,24 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty {
     padding: 0.75rem 1rem 0.75rem;
 }
 
-div.dataTables_wrapper div.dataTables_length label,
-div.dataTables_wrapper div.dataTables_filter label {
+div.dt-container div.dt-length label,
+div.dt-container div.dt-search label {
     margin-bottom: 0;
 }
 
+div.dt-container div.dt-length select {
+    width: auto;
+    display: inline-block;
+}
+
+div.dt-container div.dt-search input {
+    width: 250px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
 @media (max-width: 767px) {
-    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    div.dt-container div.dt-paging ul.pagination {
         -ms-flex-pack: center !important;
         justify-content: center !important;
         margin-top: 1rem;
@@ -210,10 +225,16 @@ div.dataTables_wrapper div.dataTables_filter label {
 
 .table a {
     margin-left: 0px;
-    margin-top: -10px;
+    margin-top: -21px;
     text-decoration: none;
     position: absolute;
     color: #212529;
+}
+@media only screen and (max-width: 870px) {
+    table a {
+        margin-left: 3px !important;
+        margin-top: -11px !important;
+    }
 }
 
 .table a:hover,
@@ -227,6 +248,7 @@ div.dataTables_wrapper div.dataTables_filter label {
 
 table.dataTable {
     margin-top: 12px !important;
+    border-collapse: separate !important;
 }
 
 .icon > svg {
@@ -264,13 +286,17 @@ table.dataTable {
 }
 
 /* 1er test Pagination */
-.pagination-outer{ text-align: center; }
+.pagination-outer{ 
+    text-align: center; 
+}
+
 .pagination {
     font-family: 'Poppins', sans-serif;
     display: inline-flex;
     position: relative;
 } 
-.pagination li a.page-link {
+
+.pagination li button{
     color: #42372c;
     background: transparent;
     font-size: 17px;
@@ -289,27 +315,28 @@ table.dataTable {
     z-index: 0;
     transition: all 0.1s ease 0s;
 }
-.pagination li:first-child a.page-link,
-.pagination li:last-child a.page-link {
+
+.pagination li:first-child button,
+.pagination li:last-child button {
     font-size: 32px;
     line-height: 36px;
 }
 
-.previous svg,
-.next svg {
+.pagination li button svg {
     font-size: 20px;
     line-height: 20px;
 }
 
-.pagination li a.page-link:hover,
-.pagination li a.page-link:focus,
-.pagination li.active a.page-link:hover,
-.pagination li.active a.page-link {
+.pagination li button:hover,
+.pagination li button:focus,
+.pagination li.active button:hover,
+.pagination li.active button {
     color: #000;
     background: transparent;
 }
-.pagination li a.page-link:before,
-.pagination li a.page-link:after {
+
+.pagination li button:before,
+.pagination li button:after {
     content: '';
     background: linear-gradient(transparent 50%,#1bc6d6 50%);
     border-radius: 50%;
@@ -322,7 +349,7 @@ table.dataTable {
     transition: all 0.3s ease 0s;
 }
 
-.pagination li a.page-link:after {
+.pagination li button:after {
     background: linear-gradient(#e2e2e2,#fff);
     left: 3px;
     top: 3px;
@@ -330,19 +357,19 @@ table.dataTable {
     right: 3px;
 }
 
-.pagination li a.page-link:hover:before,
+.pagination li button:hover:before,
 .pagination li a[data-dt-idx = "first, next, previous, last"].page-link:focus:before,
-.pagination li.active a.page-link:hover:before,
-.pagination li.active a.page-link:before 
+.pagination li.active button:hover:before,
+.pagination li.active button:before 
 {
     background: linear-gradient(transparent 50%,#44d61b 50%);
     transform: rotate(180deg);
 }
 
-.pagination li a.page-link:hover:after,
-.pagination li a.page-link:focus:after,
-.pagination li.active a.page-link:hover:after,
-.pagination li.active a.page-link:after 
+.pagination li button:hover:after,
+.pagination li button:focus:after,
+.pagination li.active button:hover:after,
+.pagination li.active button:after 
 {
     transform: rotate(180deg);
 }
@@ -352,6 +379,7 @@ table.dataTable {
         font-size: 0;
         display: inline-block;
     }
+
     .pagination li{
         display: inline-block;
         vertical-align: top;
