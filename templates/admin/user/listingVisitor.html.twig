@@ -20,481 +20,63 @@
                         <th>Email</th>
                         <th>Rôle</th>
                         <th>Dernière connexion</th>
-                        <th>Created At</th>
-                        <th>Access Site</th>
-                        <th>Update At</th>
+                        <th>Créé le</th>
+                        <th>Accès</th>
+                        <th>Modifié le</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
+                    {% for user in users %}
+                        <tr>    
+                            <td>
+                                <a href="#">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar avatar-blue mr-3">{{ user.firstname|first }}{{ user.lastname|first }}</div>
+                                        <div class="info">
+                                            <p class="fw-bold mb-0">{{ user.firstname }} {{ user.lastname|upper }}</p>
+                                        </div>
                                     </div>
+                                </a>
+                            </td>
+                            <td>
+                                {{ user.email }}
+                            </td>
+                            <td>
+                                <div class="role badge bg-danger bg-danger-alt">{{ user.roles[0] }}</div>
+                            </td>
+                            <td>23/11/2023</td>
+                            <td>
+                                {{ user.__toCreatedDate|format_datetime('short', 'none', locale: 'fr')}}
+                            </td>
+                            <td>
+                                <div class="badge bg-success bg-success-alt">{% if user.enable %}Actif{% else %}Désactif{% endif %}</div>
+                            </td>
+                            <td>
+                                <div class="badge bg-info bg-info-alt">
+                                    {% if user.__toUpdatedDate > user.__toCreatedDate %}{{ user.__toUpdatedDate|format_datetime('short', 'none', locale: 'fr')}}{% else %}-{% endif %}
                                 </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
+                            </td>
+                            <td>
+                                <div class="dropdown">
+                                <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
+                                </button>
+                                <ul class="dropdown-menu"  >
+                                    <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Modifier</a></li>
+                                    {% if user.enable %}
+                                        <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Désactiver</a></li>
+                                    {% else %}
+                                        <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activer</a></li>
+                                    {% endif %}
+                                    <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Supprimer</a></li>
+                                </ul>
                                 </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>    
-                        <td>
-                            <a href="#">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-blue mr-3">AA</div>
-                                    <div class="info">
-                                        <p class="fw-bold mb-0">Admin Administrateur</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </td>
-                        <td>
-                            admin@example.com
-                        </td>
-                        <td>
-                            <div class="role badge bg-danger bg-danger-alt">Administrator</div>
-                        </td>
-                        <td>23/11/2023</td>
-                        <td>09/04/1996</td>
-                        <td>
-                            <div class="badge bg-success bg-success-alt">actif</div>
-                        </td>
-                        <td>
-                            <div class="badge bg-info bg-info-alt">-</div>
-                        </td>
-                        <td>
-                            <div class="dropdown">
-                            <button class="btn btn-sm btn-icon"  type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
-                            </button>
-                            <ul class="dropdown-menu"  >
-                                <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Edit Profile</a></li>
-                                <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Desactivate</a></li>
-                                <li><a class="dropdown-item text-success" href="#">{{ ux_icon('fa6-solid:circle-check', {'class': 'me-2'}) }} Activate</a></li>
-                                <li><a class="dropdown-item text-danger" href="#">{{ ux_icon('fa6-solid:trash-can', {'class': 'me-2'}) }} Remove</a></li>
-                            </ul>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+
                 </tbody>
             </table>
         </div>

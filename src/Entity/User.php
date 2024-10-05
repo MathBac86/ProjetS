@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -42,13 +43,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $firstname = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'boolean', nullable: false)]
     private bool $isVerified = false;
+
+    #[ORM\Column(type: 'boolean', nullable: true)]
+    private bool $enable = true;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $lastConnexion = null;
 
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
         $this->updated_at = new \DateTimeImmutable();
+    }
+
+    public function __toCreatedDate()
+    {
+        return $this->created_at;
+    }
+
+    public function __toUpdatedDate()
+    {
+        return $this->updated_at;
     }
 
     public function getId(): ?int
@@ -158,6 +175,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setVerified(bool $isVerified): static
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getLastConnexion(): ?\DateTimeInterface
+    {
+        return $this->lastConnexion;
+    }
+
+    public function setLastConnexion(?\DateTimeInterface $lastConnexion): static
+    {
+        $this->lastConnexion = $lastConnexion;
+
+        return $this;
+    }
+
+    public function isEnable(): bool
+    {
+        return $this->enable;
+    }
+
+    public function setEnable(bool $enable): self
+    {
+        $this->enable = $enable;
 
         return $this;
     }

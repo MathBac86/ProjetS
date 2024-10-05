@@ -8,6 +8,7 @@
     background: #d5dfd6;
     z-index: 1;
     transition: all 0.5s ease;
+    top: 4px;
 }
 
 .sidebar.close {
@@ -264,7 +265,7 @@
 .home-section {
     position: fixed;
     background: #d5dfd6;
-    margin: 0px 5px 5px 10px;
+    margin: 4px 5px 5px 10px;
     left: 260px;
     width: calc(99% - 260px);
     transition: all 0.5s ease;
@@ -300,6 +301,20 @@
 .home-section .home-content .text {
     font-size: 26px;
     font-weight: 600;
+}
+
+.active,
+.sidebar .nav-links li .sub-menu.active {
+    /* background: #b5c7b7; */
+    background-color: whitesmoke;
+}
+
+.sidebar .nav-links li .sub-menu.active {
+    border: 1px solid black;
+}
+
+.sidebar .nav-links li .sub-menu.active a:hover{
+    background-color: whitesmoke;
 }
 
 @media (max-width: 400px) {

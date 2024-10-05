@@ -9,7 +9,7 @@ use App\Repository\UserRepository;
 use App\Enum\Role;
 
 
-#[Route('/admin/utilisateurs', name: 'admin_user_')]
+#[Route('/admin/utilisateurs', name: 'admin-user-')]
 class UserController extends AbstractController
 {
     public function __construct(
