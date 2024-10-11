@@ -1,0 +1,4 @@
+role:
+  ROLE_ADMIN: Administrateur
+  ROLE_USER: Visiteur
+

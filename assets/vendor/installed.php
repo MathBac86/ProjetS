@@ -159,7 +159,7 @@
   ),
   'datatables.net' => 
   array (
-    'version' => '2.1.7',
+    'version' => '2.1.6',
     'dependencies' => 
     array (
       0 => 'jquery',
@@ -193,6 +193,34 @@
     'version' => '6.6.0',
     'dependencies' => 
     array (
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
+  'datatables.net-buttons/js/buttons.colVis.mjs' => 
+  array (
+    'version' => '3.1.2',
+    'dependencies' => 
+    array (
+      0 => 'jquery',
+      1 => 'datatables.net',
+      2 => 'datatables.net',
+      3 => 'datatables.net-buttons',
+    ),
+    'extraFiles' => 
+    array (
+    ),
+  ),
+  'datatables.net-buttons/js/buttons.html5.mjs' => 
+  array (
+    'version' => '3.1.2',
+    'dependencies' => 
+    array (
+      0 => 'jquery',
+      1 => 'datatables.net',
+      2 => 'datatables.net',
+      3 => 'datatables.net-buttons',
     ),
     'extraFiles' => 
     array (

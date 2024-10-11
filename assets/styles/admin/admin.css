@@ -3,14 +3,10 @@
     left: 260px;
     width: calc(99% - 260px);
     transition: all 0.5s ease;
-    top: 7%;
+    top: 9%;
 }
 
 .sidebar.close ~ .admin-main {
     left: 78px !important;
     width: calc(99% - 78px);
 }
-
-/* .admin-main .container {
-    padding-top: 70px;
-} */

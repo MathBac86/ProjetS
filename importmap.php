@@ -66,7 +66,7 @@ return [
         'type' => 'css',
     ],
     'datatables.net' => [
-        'version' => '2.1.7',
+        'version' => '2.1.6',
     ],
     'jszip' => [
         'version' => '3.10.1',
@@ -76,5 +76,11 @@ return [
     ],
     '@fortawesome/free-solid-svg-icons' => [
         'version' => '6.6.0',
+    ],
+    'datatables.net-buttons/js/buttons.colVis.mjs' => [
+        'version' => '3.1.2',
+    ],
+    'datatables.net-buttons/js/buttons.html5.mjs' => [
+        'version' => '3.1.2',
     ],
 ];

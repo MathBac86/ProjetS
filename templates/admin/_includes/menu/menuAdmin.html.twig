@@ -15,11 +15,11 @@
             </div>
         </li>
         <li>
-            <a href="#" class="{% if dashboard %}active{% endif %}">
+            <a href="{{ path('admin-dashboard') }}" class="{% if dashboard %}active{% endif %}">
                 {{ ux_icon('fa6-solid:table-cells-large') }}
                 <span class="link_name ms-3 ">Dashboard</span>
             </a>
-            <ul class="sub-menu blank">
+            <ul class="sub-menu blank {% if dashboard %}active{% endif %}">
                 <li><a class="link_name" href="#">Dashboard</a></li>
             </ul>
         </li>

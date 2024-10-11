@@ -1,6 +1,6 @@
 {
     "app": {
-        "path": "\/assets\/app-d1122d28c86ff5e92aee7429ca337e91.js",
+        "path": "\/assets\/app-b296793efb4f0dbc50694164768b9952.js",
         "type": "js"
     },
     "\/assets\/bootstrap.js": {
@@ -36,7 +36,7 @@
         "type": "css"
     },
     "\/assets\/styles\/admin\/admin.css": {
-        "path": "\/assets\/styles\/admin\/admin-5467c9fc844ba12ada4c22387052568a.css",
+        "path": "\/assets\/styles\/admin\/admin-392eb11f28c8afd957eee798707593ae.css",
         "type": "css"
     },
     "\/assets\/styles\/admin\/sidebar.css": {
@@ -44,7 +44,7 @@
         "type": "css"
     },
     "\/assets\/styles\/admin\/table.css": {
-        "path": "\/assets\/styles\/admin\/table-6af130d587df5c191589532f46fb8cba.css",
+        "path": "\/assets\/styles\/admin\/table-0776e5b29f9a22d3f5a04a4441dad3ae.css",
         "type": "css"
     },
     "\/assets\/js\/menu\/menu.js": {
@@ -56,7 +56,7 @@
         "type": "js"
     },
     "\/assets\/js\/admin\/table.js": {
-        "path": "\/assets\/js\/admin\/table-d6c1b4d561c7afc674efcd7aee8d396f.js",
+        "path": "\/assets\/js\/admin\/table-bd31f9e84a068aac33bddeb4ea4d5724.js",
         "type": "js"
     },
     "@hotwired\/stimulus": {
@@ -120,7 +120,7 @@
         "type": "css"
     },
     "datatables.net": {
-        "path": "\/assets\/vendor\/datatables.net\/datatables.net.index-bc5a7487378fab1fbe6e9e711433d065.js",
+        "path": "\/assets\/vendor\/datatables.net\/datatables.net.index-d239fd79a39be90492d042bc17588ed0.js",
         "type": "js"
     },
     "jszip": {
@@ -133,6 +133,14 @@
     },
     "@fortawesome\/free-solid-svg-icons": {
         "path": "\/assets\/vendor\/@fortawesome\/free-solid-svg-icons\/free-solid-svg-icons.index-e644acaac325ec2be96f2cfb1e3ea9f6.js",
+        "type": "js"
+    },
+    "datatables.net-buttons\/js\/buttons.colVis.mjs": {
+        "path": "\/assets\/vendor\/datatables.net-buttons\/js\/buttons.colVis.mjs-3e7a7fddadc0db5c9c8bb4a7fa7bce73.js",
+        "type": "js"
+    },
+    "datatables.net-buttons\/js\/buttons.html5.mjs": {
+        "path": "\/assets\/vendor\/datatables.net-buttons\/js\/buttons.html5.mjs-79519a0d9bebe2523d02ffc3ec4c349d.js",
         "type": "js"
     }
 }

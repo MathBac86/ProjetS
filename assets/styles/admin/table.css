@@ -386,4 +386,7 @@ table.dataTable {
         margin: 0 0 15px;
     }
 }
-  
+
+.dt-button-collection .dt-button-active {
+    background: #d5dfd6 !important;
+}
