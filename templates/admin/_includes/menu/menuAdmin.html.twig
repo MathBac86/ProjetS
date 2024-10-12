@@ -1,6 +1,8 @@
 
 {% set dashboard = app.request.attributes.get('_route') starts with 'admin-dashboard' %}
-{% set visitor = app.request.attributes.get('_route') starts with 'admin-user-listing' %}
+{% set visitor = app.request.attributes.get('_route') starts with 'admin-user-listing' 
+                or app.request.attributes.get('_route') starts with 'admin-user-new'  
+                or app.request.attributes.get('_route') starts with 'admin-user-detail' %}
 
 
 <div class="sidebar close">

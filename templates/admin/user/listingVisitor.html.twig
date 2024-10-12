@@ -10,7 +10,7 @@
 
             <table id="example" class="table table-hover responsive nowrap" style="width:100%">
                 <div class="d-flex justify-content-end">
-                    <a class="btn btn-success mb-3 new-item" href="#">{{ ux_icon('fa6-solid:user-pen') }}<span class="ms-2"> Nouveau profil</span></a>
+                    <a class="btn btn-success mb-3 new-item" href="{{ path('admin-user-new') }}">{{ ux_icon('fa6-solid:user-pen') }}<span class="ms-2"> Nouveau profil</span></a>
                 </div>
 
                 <thead>
@@ -30,7 +30,7 @@
                     {% for user in users %}
                         <tr>    
                             <td>
-                                <a href="#">
+                                <a href="{{ path('admin-user-detail', {'id': user.id}) }}">
                                     <div class="d-flex align-items-center">
                                         <div class="avatar avatar-blue mr-3">{{ user.firstname|first }}{{ user.lastname|first }}</div>
                                         <div class="info">
@@ -63,7 +63,7 @@
                                     {{ ux_icon('fa6-solid:ellipsis', {'data-bs-toggle' : 'tooltip', 'data-placement' : 'top', 'title' : 'Actions'}) }}
                                 </button>
                                 <ul class="dropdown-menu"  >
-                                    <li><a class="dropdown-item" href="#">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Modifier</a></li>
+                                    <li><a class="dropdown-item" href="{{ path('admin-user-detail', {'id': user.id}) }}">{{ ux_icon('fa6-solid:pencil', {'class': 'me-2'}) }} Modifier</a></li>
                                     {% if user.enable %}
                                         <li><a class="dropdown-item text-warning" href="#">{{ ux_icon('fa6-solid:circle-xmark', {'class': 'me-2'}) }} Désactiver</a></li>
                                     {% else %}
