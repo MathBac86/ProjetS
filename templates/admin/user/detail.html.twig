@@ -20,7 +20,7 @@
                     {{ pageTitle }}
                 </h1>
             </div>
-
+            {{ form_start(form) }}
             <div class="col-12 col-lg-auto text-lg-right mt-2 mt-lg-0">
                 {{ form_widget(form.submit) }}
                 {# {% if user.id and user != app.user and is_granted('ROLE_ALLOWED_TO_SWITCH') %}
@@ -36,7 +36,7 @@
     </div>
 
     <div class="container pull-up view-only mt-3">
-        {{ form_start(form) }}
+        {# {{ form_start(form) }} #}
         <div class="row">
             <div class="col-6">
                 <div class="card bg-white m-b-30">
@@ -79,10 +79,31 @@
             </div>
 
             <div class="col-6">
-
+                <div class="card bg-white m-b-30">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            {{ ux_icon('fa6-solid:photo-film', {'class': 'me-2'}) }}
+                            Photo
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        {{ dump(user)}}
+                        <div class="form__group field mb-3">
+                            {% if user.avatar is not null %}
+                                {% for image in user.avatar %}
+                                    <img src="{{ vich_uploader_asset(image, 'file') }}"/>
+                                    <p>Nom du fichier : {{ image.fileOriginalName }}</p>
+                                {% endfor %}                              
+                            {% endif %}
+                            {{ form_errors(form.avatar.vars.prototype) }}
+                            {{ form_widget(form.avatar.vars.prototype) }}
+                            {{ form_help(form.avatar.vars.prototype) }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        {{ form_end(form) }}
+        {{ form_end(form, {render_rest: false}) }}
     </div>
 
 </div>

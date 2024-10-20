@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\Admin;
 
 use App\Entity\User;
-use Doctrine\DBAL\Types\BooleanType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -62,6 +62,13 @@ class UserAdminFormType extends AbstractType
                     'role'          => 'switch',
                     'style'         => '--bg-checked: rgb(50,240,130)'
                 ]
+            ])
+            ->add('avatar', CollectionType::class, [
+                'entry_type' => UserFileFormType::class,
+                'by_reference' => false,
+                'allow_add'    => true,
+                'allow_delete' => true,
+                'prototype' => true
             ])
             ->add('submit', SubmitType::class, [
                 'label'         => 'Sauvegarder',

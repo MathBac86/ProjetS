@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use App\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
@@ -52,10 +53,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $lastConnexion = null;
 
+    #[ORM\ManyToOne(inversedBy: 'users')]
+    private ?Files $avatar = null;
+
+    // #[ORM\OneToOne(targetEntity: Files::class, cascade: ['persist', 'remove'], orphanRemoval: true)]
+    // private ?Files $avatar = null;
+
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
         $this->updated_at = new \DateTimeImmutable();
+        $this->avatar = new ArrayCollection;
     }
 
     public function __toCreatedDate()
@@ -199,6 +207,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEnable(bool $enable): self
     {
         $this->enable = $enable;
+
+        return $this;
+    }
+
+    // public function getAvatar(): ?Files
+    // {
+    //     return $this->avatar;
+    // }
+
+    // public function setAvatar(?Files $avatar): self
+    // {
+    //     $this->avatar = $avatar;
+
+    //     return $this;
+    // }
+
+    public function getAvatar(): ?Files
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(?Files $avatar): static
+    {
+        $this->avatar = $avatar;
 
         return $this;
     }

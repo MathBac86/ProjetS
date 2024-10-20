@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\UserRepository;
 use App\Enum\Role;
 use App\Entity\User;
-use App\Form\UserAdminFormType;
+use App\Form\Admin\UserAdminFormType;
 use Doctrine\ORM\EntityManagerInterface;
 
 
@@ -55,6 +55,7 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            var_dump($user); die;
             $this->entityManager->persist($user);
             $this->entityManager->flush();
 
