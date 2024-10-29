@@ -2,7 +2,7 @@
 
 namespace App\Form\Admin;
 
-use App\Entity\Files;
+use App\Entity\File;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -42,7 +42,7 @@ class UserFileFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Files::class,
+            'data_class' => File::class,
         ]);
     }
 }

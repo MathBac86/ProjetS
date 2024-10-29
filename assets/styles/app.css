@@ -43,3 +43,8 @@ main {
   clear: both;
   display: table;
 }
+
+.alert svg {
+  width: 15px;
+  margin-top: -4px;
+}

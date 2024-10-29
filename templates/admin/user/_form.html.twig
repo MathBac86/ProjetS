@@ -1,0 +1,82 @@
+<turbo-stream action="append" target="user-info">
+    <template>
+        {{ form_start(form) }}
+        <div class="container pull-up view-only mt-3">
+            
+            <div class="col-12 col-lg-auto text-lg-right mt-2 mt-lg-0">
+                {{ form_widget(form.submit) }}
+                {# {% if user.id and user != app.user and is_granted('ROLE_ALLOWED_TO_SWITCH') %}
+                    <a href="{{ path('admin-index', {'_switch_user': user.email}) }}" title="Se connecter en tant que" class="btn btn-info">
+                        <i class="mdi mdi-swap-horizontal"></i>&nbsp;Se connecter en tant que
+                    </a>
+                {% endif %} #}
+                {% if user.id is not null %}
+                    <a type="button" class="btn btn-danger d-inline-block" href="" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce visiteur ?')">Supprimer</a>
+                {% endif %}
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="card bg-white m-b-30">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                {{ ux_icon('fa6-solid:id-card', {'class': 'me-2'}) }}
+                                Informations Générales
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="form__group field mb-3">
+                                {{ form_errors(form.lastname) }}
+                                {{ form_widget(form.lastname) }}
+                                {{ form_label(form.lastname) }}
+                                {{ form_help(form.lastname) }}
+                            </div>
+
+                            <div class="form__group field mb-3">
+                                {{ form_errors(form.firstname) }}
+                                {{ form_widget(form.firstname) }}
+                                {{ form_label(form.firstname) }}
+                                {{ form_help(form.firstname) }}
+                            </div>
+
+                            <div class="form__group field mb-3">
+                                {{ form_errors(form.email) }}
+                                {{ form_widget(form.email) }}
+                                {{ form_label(form.email) }}
+                                {{ form_help(form.email) }}
+                            </div>
+
+                            <div class="form__group field mb-3">
+                                {{ form_errors(form.enable) }}
+                                {{ form_widget(form.enable) }}
+                                {{ form_label(form.enable) }}
+                                {{ form_help(form.enable) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card bg-white m-b-30">
+                        <div class="card-header">
+                            <h2 class="card-title">
+                                {{ ux_icon('fa6-solid:photo-film', {'class': 'me-2'}) }}
+                                Photo
+                            </h2>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="form__group field mb-3">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="token" value="{{ csrf_token('admin-user-item') }}">
+
+        </div>
+        {{ form_end(form, {render_rest: false}) }}
+        
+    </template>
+</turbo-stream>

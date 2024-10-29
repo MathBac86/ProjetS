@@ -8,7 +8,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -27,7 +26,6 @@ class UserAdminFormType extends AbstractType
                     'class'         => 'form__field'
                 ]
             ])
-            // ->add('roles')
             ->add('lastname', TextType::class, [
                 'label'         => 'Le nom',
                 'label_attr'    => [
@@ -46,7 +44,7 @@ class UserAdminFormType extends AbstractType
                 ],
                 'required'      => true,
                 'attr'          => [
-                    'placeholder'   => ' Votre nom',
+                    'placeholder'   => ' Votre prénom',
                     'class'         => 'form__field'
                 ]
             ])
@@ -55,20 +53,11 @@ class UserAdminFormType extends AbstractType
                 'label_attr'    => [
                     'class'         => 'form__label'
                 ],
-                'required'      => true,
                 'attr'          => [
-                    'placeholder'   => ' Votre nom',
                     'class'         => 'form__field mt-2',
                     'role'          => 'switch',
                     'style'         => '--bg-checked: rgb(50,240,130)'
                 ]
-            ])
-            ->add('avatar', CollectionType::class, [
-                'entry_type' => UserFileFormType::class,
-                'by_reference' => false,
-                'allow_add'    => true,
-                'allow_delete' => true,
-                'prototype' => true
             ])
             ->add('submit', SubmitType::class, [
                 'label'         => 'Sauvegarder',
@@ -83,6 +72,9 @@ class UserAdminFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            // enable/disable CSRF protection for this form
+            'csrf_protection' => false,
+
         ]);
     }
 }

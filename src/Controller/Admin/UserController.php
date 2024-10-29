@@ -11,6 +11,8 @@ use App\Enum\Role;
 use App\Entity\User;
 use App\Form\Admin\UserAdminFormType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\UX\Turbo\TurboBundle;
 
 
 #[Route('/admin/utilisateurs', name: 'admin-user-')]
@@ -23,6 +25,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/', name: 'listing')]
+    #[IsGranted('ROLE_ADMIN', statusCode: 404, message: 'Post not found')]
     public function listingVisitor(): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
@@ -35,6 +38,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/nouveau', name: 'new')]
+    #[IsGranted('ROLE_ADMIN', statusCode: 404, message: 'Post not found')]
     public function newVisitor(Request $request) 
     {
         $user = new User;
@@ -42,6 +46,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/{id}', name: 'detail')]
+    #[IsGranted('ROLE_ADMIN', statusCode: 404, message: 'Post not found')]
     public function editVisitor(User $user, Request $request) 
     {
         return $this->handlerAdminUser($user, $request);
@@ -49,15 +54,23 @@ class UserController extends AbstractController
 
     private function handlerAdminUser(User $user, Request $request) 
     {
-        $edit = $user->id ?? null;
+        $edit = $user->getId() ?? null;
 
         $form = $this->createForm(UserAdminFormType::class, $user);
+        //$emptyForm = clone $form;
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            var_dump($user); die;
+            //dd($user);
             $this->entityManager->persist($user);
             $this->entityManager->flush();
+
+            // 🔥 The magic happens here! 🔥
+            if (TurboBundle::STREAM_FORMAT === $request->getPreferredFormat()) {
+                // If the request comes from Turbo, set the content type as text/vnd.turbo-stream.html and only send the HTML to update
+                $request->setRequestFormat(TurboBundle::STREAM_FORMAT);
+                //return $this->renderBlock('admin/user/detail.html.twig', 'success_stream', ['user' => $user, 'form' => $emptyForm]);
+            }
 
             if (empty($edit)) {
                 $this->addFlash('success', 'L\'utilisateur '.$user->getLastname().' '.$user->getFirstname().' a été créé');
@@ -70,7 +83,7 @@ class UserController extends AbstractController
     
         return $this->render('admin/user/detail.html.twig', [
             'user' => $user,
-            'form' => $form->createView()
+            'form' => $form
         ]);
     }
 }

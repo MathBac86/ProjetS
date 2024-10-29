@@ -1,6 +1,6 @@
 {
     "app": {
-        "path": "\/assets\/app-b296793efb4f0dbc50694164768b9952.js",
+        "path": "\/assets\/app-eca1d3818fb7ff8e63876dc4ce8a7256.js",
         "type": "js"
     },
     "\/assets\/bootstrap.js": {
@@ -20,7 +20,7 @@
         "type": "js"
     },
     "\/assets\/styles\/app.css": {
-        "path": "\/assets\/styles\/app-8b9eab569a19dfc705e1759529d87e6e.css",
+        "path": "\/assets\/styles\/app-adee7b4d01344fa7cf55a707a7d228b7.css",
         "type": "css"
     },
     "\/assets\/styles\/nav.css": {
@@ -52,7 +52,7 @@
         "type": "js"
     },
     "\/assets\/js\/admin\/sidebar.js": {
-        "path": "\/assets\/js\/admin\/sidebar-cbcbace5ed617f6df4f1e800b9f45243.js",
+        "path": "\/assets\/js\/admin\/sidebar-1e41025db7b036e633d5385e01d93b20.js",
         "type": "js"
     },
     "\/assets\/js\/admin\/table.js": {
